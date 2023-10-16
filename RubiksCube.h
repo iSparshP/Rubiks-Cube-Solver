@@ -1,0 +1,8 @@
+//
+// Created by Sparsh Prakash on 17/10/23.
+//
+
+#ifndef RUBIKS_CUBE_SOLVER_RUBIKSCUBE_H
+#define RUBIKS_CUBE_SOLVER_RUBIKSCUBE_H
+
+#endif //RUBIKS_CUBE_SOLVER_RUBIKSCUBE_H
