@@ -215,43 +215,43 @@ string RubiksCube::getCornerColorString(uint8_t index) const {
         case 1:
             str += getColorLetter(getColor(FACE::UP, 2, 0));
             str += getColorLetter(getColor(FACE::FRONT, 0, 0));
-            str += getColorLetter(getColor(FACE::RIGHT, 0, 2));
+            str += getColorLetter(getColor(FACE::LEFT, 0, 2));
             break;
 
         case 2:
             str += getColorLetter(getColor(FACE::UP, 0, 0));
-            str += getColorLetter(getColor(FACE::FRONT, 0, 2));
-            str += getColorLetter(getColor(FACE::RIGHT, 0, 0));
+            str += getColorLetter(getColor(FACE::BACK, 0, 2));
+            str += getColorLetter(getColor(FACE::LEFT, 0, 0));
             break;
 
         case 3:
             str += getColorLetter(getColor(FACE::UP, 0, 2));
-            str += getColorLetter(getColor(FACE::FRONT, 0, 0));
+            str += getColorLetter(getColor(FACE::BACK, 0, 0));
             str += getColorLetter(getColor(FACE::RIGHT, 0, 2));
             break;
 
         case 4:
-            str += getColorLetter(getColor(FACE::UP, 0, 2));
+            str += getColorLetter(getColor(FACE::DOWN, 0, 2));
             str += getColorLetter(getColor(FACE::FRONT, 2, 2));
             str += getColorLetter(getColor(FACE::RIGHT, 2, 0));
             break;
 
         case 5:
-            str += getColorLetter(getColor(FACE::UP, 0, 0));
+            str += getColorLetter(getColor(FACE::DOWN, 0, 0));
             str += getColorLetter(getColor(FACE::FRONT, 2, 0));
-            str += getColorLetter(getColor(FACE::RIGHT, 2, 2));
+            str += getColorLetter(getColor(FACE::LEFT, 2, 2));
             break;
 
         case 6:
-            str += getColorLetter(getColor(FACE::UP, 0, 0));
-            str += getColorLetter(getColor(FACE::FRONT, 2, 0));
+            str += getColorLetter(getColor(FACE::DOWN, 0, 0));
+            str += getColorLetter(getColor(FACE::BACK, 2, 0));
             str += getColorLetter(getColor(FACE::RIGHT, 2, 2));
             break;
 
         case 7:
-            str += getColorLetter(getColor(FACE::UP, 2, 2));
-            str += getColorLetter(getColor(FACE::FRONT, 2, 0));
-            str += getColorLetter(getColor(FACE::RIGHT, 2, 2));
+            str += getColorLetter(getColor(FACE::DOWN, 2, 2));
+            str += getColorLetter(getColor(FACE::BACK, 2, 0));
+            str += getColorLetter(getColor(FACE::LEFT, 2, 2));
             break;
     }
     return str;
