@@ -94,7 +94,7 @@ public:
 
     uint8_t getCornerIndex(uint8_t index) const;
 
-    uint8_t getCornerOrientation(uint8_t index) const;
+    uint8_t getCornerOrientation(uint8_t ex) const;
 
 };
 
