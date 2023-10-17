@@ -44,15 +44,15 @@ public:
 
     virtual bool isSolved() const=0;
 
-    static string getMove(MOVE ind);
+    static string getMove(MOVE index);
 
     void print() const;
 
     vector<MOVE> randomShuffleCube(unsigned int times);
 
-    RubiksCube &move(MOVE ind);
+    RubiksCube &move(MOVE index);
 
-    RubiksCube &invert(MOVE ind);
+    RubiksCube &invert(MOVE index);
 
     virtual RubiksCube &l() = 0;
 
@@ -90,11 +90,11 @@ public:
 
     virtual RubiksCube &b2() = 0;
 
-    string getCornerColorString(uint8_t ind) const;
+    string getCornerColorString(uint8_t index) const;
 
-    uint8_t getCornerIndex(uint8_t ind) const;
+    uint8_t getCornerIndex(uint8_t index) const;
 
-    uint8_t getCornerOrientation(uint8_t ind) const;
+    uint8_t getCornerOrientation(uint8_t index) const;
 
 };
 
