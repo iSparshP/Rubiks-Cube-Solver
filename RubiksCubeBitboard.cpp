@@ -157,5 +157,37 @@ public:
         return *this;
     };
 
+    RubiksCube &f() override {
+        this->rotateFace(2);
+        uint64_t clr1 = (bitboard[0] & (one_8 << (8 * 4))) >> (8 * 4);
+        uint64_t clr2 = (bitboard[0] & (one_8 << (8 * 5))) >> (8 * 5);
+        uint64_t clr3 = (bitboard[0] & (one_8 << (8 * 6))) >> (8 * 6);
+
+        this->rotateSide(0, 4, 5, 6, 1, 2, 3, 4);
+        this->rotateSide(1, 2, 3, 4, 5, 0, 1, 2);
+        this->rotateSide(5, 0, 1, 2, 3, 6, 7, 0);
+
+        bitboard[3] = (bitboard[3] & ~(one_8 << (8 * 6))) | (clr1 << (8 * 6));
+        bitboard[3] = (bitboard[3] & ~(one_8 << (8 * 7))) | (clr1 << (8 * 7));
+        bitboard[3] = (bitboard[3] & ~(one_8 << (8 * 0))) | (clr1 << (8 * 0));
+
+        return *this;
+    };
+
+    RubiksCube &fPrime() override {
+        this->f();
+        this->f();
+        this->f();
+
+        return *this;
+    };
+
+    RubiksCube &f2() override {
+        this->f();
+        this->f();
+
+        return *this;
+    };
+
 
 };
