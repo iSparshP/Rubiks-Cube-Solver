@@ -159,19 +159,19 @@ void RubiksCube::print() const {
 
     for (int row = 0; row <= 2; row++) {
 
-        for (int col = 0; col < 2; col++) {
+        for (int col = 0; col <= 2; col++) {
             cout<< getColorLetter(getColor(FACE::LEFT, row, col))<< " ";
         }
         cout<<" ";
-        for (int col = 0; col < 2; col++) {
+        for (int col = 0; col <= 2; col++) {
             cout<< getColorLetter(getColor(FACE::FRONT, row, col))<< " ";
         }
         cout<<" ";
-        for (int col = 0; col < 2; col++) {
+        for (int col = 0; col <= 2; col++) {
             cout<< getColorLetter(getColor(FACE::RIGHT, row, col))<< " ";
         }
         cout<<" ";
-        for (int col = 0; col < 2; col++) {
+        for (int col = 0; col <= 2; col++) {
             cout<< getColorLetter(getColor(FACE::BACK, row, col))<< " ";
         }
         cout<<"\n";
@@ -182,7 +182,7 @@ void RubiksCube::print() const {
     for(int row=0; row<=2; row++) {
         for (unsigned i = 0; i < 7; i++) cout << " ";
         for (int col = 0; col <= 2; col++) {
-            cout<< getColorLetter(getColor(FACE::UP, row, col)) << " ";
+            cout<< getColorLetter(getColor(FACE::DOWN, row, col)) << " ";
         }
         cout<<"\n";
     }

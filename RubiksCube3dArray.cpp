@@ -16,9 +16,9 @@ private:
             }
         }
         for (int i = 0; i <3; i++) { cube[index][0][i] = temp_arr[2-i][0];}
-        for (int i = 0; i <3; i++) { cube[index][0][2] = temp_arr[0][i];}
+        for (int i = 0; i <3; i++) { cube[index][i][2] = temp_arr[0][i];}
         for (int i = 0; i <3; i++) { cube[index][0][2-i] = temp_arr[i][2];}
-        for (int i = 0; i <3; i++) { cube[index][2-1][0] = temp_arr[2][2-i];}
+        for (int i = 0; i <3; i++) { cube[index][2-i][0] = temp_arr[2][2-i];}
 
     }
 
