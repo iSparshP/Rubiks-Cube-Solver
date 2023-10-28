@@ -26,6 +26,10 @@ private:
 public:
     char cube[6][3][3]{};
 
+
+//Constructor
+//First Initialization of the object
+
     RubiksCube3dArray(){
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 3; j++) {
@@ -55,7 +59,7 @@ public:
         }
     }
 
-    [[nodiscard]] bool isSolved() const override{
+     bool isSolved() const override{
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 3; j++) {
                 for (int k = 0; k < 3; k++) {

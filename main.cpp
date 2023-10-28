@@ -1,6 +1,11 @@
-#include <iostream>
+
+#include "RubiksCube3dArray.cpp"
+
+using namespace std;
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+    RubiksCube3dArray Objectof3darray;
+    Objectof3darray.print();
+
+
 }
