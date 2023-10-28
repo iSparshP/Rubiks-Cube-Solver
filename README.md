@@ -37,6 +37,6 @@ To get started with the Rubik's Cube Solver, follow these simple steps:
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/yourusername/rubiks-cube-solver.git
+   git clone https://github.com/iSparshP/Rubiks-Cube-Solver.git
 
 
