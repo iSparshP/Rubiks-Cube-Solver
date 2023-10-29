@@ -1,33 +1,80 @@
-
+// Include the source files for three different Rubik's Cube implementations
 #include "RubiksCube3dArray.cpp"
+#include "RubiksCube1dArray.cpp"
+#include "RubiksCubeBitboard.cpp"
 
+
+// Bring the entire C++ Standard Library namespace into scope
 using namespace std;
 
+// Main function, the entry point of the program
 int main() {
-    RubiksCube3dArray Objectof3darray;
-    Objectof3darray.print();
 
-    Objectof3darray.r();
-//    Objectof3darray.d();
-//    Objectof3darray.r();
-    Objectof3darray.print();
+
+//    // Object Creation and Printing for RubiksCube3dArray
+//    RubiksCube3dArray Objectof3darray;
+//    Objectof3darray.print();
+//
+//    // Object Creation and Printing for RubiksCube1dArray
+//    RubiksCube1dArray Objectof1darray;
+//    Objectof1darray.print();
+//
+//    // Object Creation and Printing for RubiksCubeBitboard
+//    RubiksCubeBitboard ObjectofBitboard;
+//    ObjectofBitboard.print();
+//
+//// Testing for RubiksCube3dArray
+//
 //    if(Objectof3darray.isSolved()) cout << "SOLVED\n";
 //    else cout<< "NOT SOLVED\n";
 //
-//    vector<RubiksCube::MOVE> movesToShuffle = Objectof3darray.randomShuffleCube(2);
-//    for (auto move: movesToShuffle)
+//    // Generate random shuffle moves and print them for RubiksCube3dArray
+//    vector<RubiksCube::MOVE> movesToShuffle3dArray = Objectof3darray.randomShuffleCube(2);
+//    for (auto move: movesToShuffle3dArray)
 //    {
 //        cout << Objectof3darray.getMove(move) << " ";
 //    }
 //    cout << "\n";
+//
+//    // Print the cube's state after shuffling and check if it's solved
 //    Objectof3darray.print();
 //    if(Objectof3darray.isSolved()) cout << "SOLVED\n";
 //    else cout<< "NOT SOLVED\n";
-
-
-//    Objectof3darray.l();
-//    Objectof3darray.print();
-
-
+//
+////  (( Testing for RubiksCube1dArray ))
+//
+//    if(Objectof1darray.isSolved()) cout << "SOLVED\n";
+//    else cout<< "NOT SOLVED\n";
+//
+//    // Generate random shuffle moves and print them for RubiksCube1dArray
+//    vector<RubiksCube::MOVE> movesToShuffle1dArray = Objectof1darray.randomShuffleCube(2);
+//    for (auto move: movesToShuffle1dArray)
+//    {
+//        cout << Objectof1darray.getMove(move) << " ";
+//    }
+//    cout << "\n";
+//
+//    // Print the cube's state after shuffling and check if it's solved
+//    Objectof1darray.print();
+//    if(Objectof1darray.isSolved()) cout << "SOLVED\n";
+//    else cout<< "NOT SOLVED\n";
+//
+////  (( Testing for RubiksCubeBitboard ))
+//
+//    if(ObjectofBitboard.isSolved()) cout << "SOLVED\n";
+//    else cout<< "NOT SOLVED\n";
+//
+//    // Generate random shuffle moves and print them for RubiksCubeBitboard
+//    vector<RubiksCube::MOVE> movesToShuffleBitboard = ObjectofBitboard.randomShuffleCube(3);
+//    for (auto move: movesToShuffleBitboard)
+//    {
+//        cout << ObjectofBitboard.getMove(move) << " ";
+//    }
+//    cout << "\n";
+//
+//    // Print the cube's state after shuffling and check if it's solved
+//    ObjectofBitboard.print();
+//    if(ObjectofBitboard.isSolved()) cout << "SOLVED\n";
+//    else cout<< "NOT SOLVED\n";
 
 }
