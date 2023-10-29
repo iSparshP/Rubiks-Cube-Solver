@@ -8,4 +8,6 @@ add_executable(Rubiks_Cube_Solver main.cpp
         Prototype/RubiksCube.cpp
         Prototype/RubiksCube3dArray.cpp
         Prototype/RubiksCube1dArray.cpp
-        Prototype/RubiksCubeBitboard.cpp)
+        Prototype/RubiksCubeBitboard.cpp
+        Solver/DFSSolver.h
+        Solver/BFSSolver.h)
