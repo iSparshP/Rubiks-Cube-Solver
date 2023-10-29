@@ -1,7 +1,7 @@
 // Include the source files for three different Rubik's Cube implementations
-#include "RubiksCube3dArray.cpp"
-#include "RubiksCube1dArray.cpp"
-#include "RubiksCubeBitboard.cpp"
+#include "Prototype/RubiksCube3dArray.cpp"
+#include "Prototype/RubiksCube1dArray.cpp"
+#include "Prototype/RubiksCubeBitboard.cpp"
 
 
 // Bring the entire C++ Standard Library namespace into scope
