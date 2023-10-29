@@ -7,21 +7,29 @@
 
 class RubiksCubeBitboard : public RubiksCube {
 private:
+    // Stores the solved state of each face
     uint64_t solved_side_config[6]{};
 
+
+    // Initialization of the mapping between the cube's faces and the 2D array indices
     int arr[3][3]={{0,1,2},
                    {7,8,3},
                    {6,5,4}};
 
     uint64_t one_8 = (1 << 8) - 1, one_24 = (1 << 24) - 1;
 
+
+    // Function to rotate a single face of the cube
     void rotateFace(int index) {
+        // Extract the face to rotate, perform the rotation, and update the cube's bitboard
         uint64_t side = bitboard[index];
         side = side >> (8 * 6);
         bitboard[index] = (bitboard[index] << 16) | (side);
     }
 
+    // Function to rotate a side of the cube while maintaining color consistency
     void rotateSide(int s1, int s1_1, int s1_2, int s1_3, int s2, int s2_1, int s2_2, int s2_3){
+        // Extract the colors of the side to rotate and the destination side, perform the rotation, and update the cube's bitboard
         uint64_t clr1 = (bitboard[s2] & (one_8 << (8 * s2_1))) >> (8 * s2_1);
         uint64_t clr2 = (bitboard[s2] & (one_8 << (8 * s2_2))) >> (8 * s2_2);
         uint64_t clr3 = (bitboard[s2] & (one_8 << (8 * s2_3))) >> (8 * s2_3);
@@ -31,6 +39,8 @@ private:
         bitboard[s1] = (bitboard[s1] & ~(one_8 << (8 * s1_3))) | (clr3 << (8 * s1_3));
     }
 
+
+    // Function to map a corner's color pattern to a 5-bit representation
     int get5bitCorner(string corner){
         int ret=0;
         string actual_str;
@@ -38,29 +48,30 @@ private:
             if(c != 'W' && c != 'Y') continue;
             actual_str.push_back(c);
             if(c == 'Y'){
-                ret |= (1 << 2);
+                ret |= (1 << 2);  // Yellow
             }
         }
 
         for (auto c: corner) {
             if(c != 'R' && c != 'O') continue;
             if(c=='O'){
-                ret |= (1<<1);
+                ret |= (1<<1);   // Orange
             }
         }
 
         for (auto c: corner) {
             if(c != 'B' && c != 'G') continue;
             if(c=='G'){
-                ret |= (1<<0);
+                ret |= (1<<0);   // Green
             }
         }
 
-        if ( corner[1] == actual_str[0]){
-            ret |= (1 << 3);
+        if ( corner[1] == actual_str[0])
+        {
+            ret |= (1 << 3);    // Red
         } else if (corner[2] == actual_str[0])
         {
-            ret |= (1 << 4);
+            ret |= (1 << 4);    // Blue
         }
         return ret;
     }
@@ -76,6 +87,8 @@ private:
 
 
 public:
+
+    // Stores the current state of each face in the bitboard representation
     uint64_t bitboard[6]{};
 
     RubiksCubeBitboard() {
@@ -83,12 +96,13 @@ public:
             uint64_t clr = 1 << side;
             bitboard[side] =0;
             for (int faceIndex = 0; faceIndex < 8; ++faceIndex) {
-                bitboard[side] |= clr << (8 * faceIndex);
+                bitboard[side] |= clr << (8 * faceIndex);  // Initialize the bitboard with solved colors
             }
             solved_side_config[side] = bitboard[side];
         }
     }
 
+    // Function to get the color of a cube's face at a specific position
     COLOR getColor(FACE face, unsigned row, unsigned col) const override {
         int idx = arr[row][col];
         if (idx == 8) return (COLOR)((int) face);
@@ -104,6 +118,10 @@ public:
         return (COLOR)(bit_pos -1);
     }
 
+
+
+    // Function to check if the cube is solved
+
     bool isSolved() const override{
         for (int i = 0; i < 6; ++i) {
             if(solved_side_config[i] != bitboard[i]) return false;
@@ -111,6 +129,8 @@ public:
         return true;
     }
 
+
+    // Functions for cube rotations (u, l, f, r, b, d) and their respective inverse and double moves
     RubiksCube &u() override {
         this->rotateFace(0);
         uint64_t temp = bitboard[2] & one_24;
@@ -311,6 +331,9 @@ public:
         }
         return *this;
     }
+
+
+    // Function to compute a unique identifier for the cube's corners
 
     uint64_t getCorners() {
         uint64_t ret = 0;

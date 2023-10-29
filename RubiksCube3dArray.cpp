@@ -7,7 +7,7 @@
 class RubiksCube3dArray : public RubiksCube {
 private:
 
-
+    // Function to rotate a single face of the cube
     void rotateFace(int index) {
         char temp_arr[3][3] = {};
         for (int i = 0; i <3; i++) {
@@ -26,10 +26,8 @@ private:
 public:
     char cube[6][3][3]{};
 
-
-//Constructor
-//First Initialization of the object
-
+    // Constructor for RubiksCube3dArray
+    // Initializes the cube object with default colors
     RubiksCube3dArray(){
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 3; j++) {
@@ -40,6 +38,9 @@ public:
 
         }
     }
+
+    // Implementation of the getColor method to retrieve the color of a face
+    // at a specific position on the cube.
 
     COLOR getColor(FACE face, unsigned row, unsigned col) const override{
         char color = cube[int(face)][row][col];
@@ -59,7 +60,11 @@ public:
         }
     }
 
-     bool isSolved() const override{
+
+
+    // Check if the cube is solved
+
+    bool isSolved() const override{
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 3; j++) {
                 for (int k = 0; k < 3; k++) {
@@ -70,6 +75,10 @@ public:
         }
         return true;
     }
+
+
+
+    // Implementations of cube rotation methods u, uPrime, u2, l, lPrime, l2, etc.
 
     RubiksCube &u() override {
         this->rotateFace(0);
@@ -239,6 +248,9 @@ public:
         return *this;
     }
 
+
+    // Overloaded equality operator to compare two RubiksCube3dArray objects for equality.
+
     bool operator==(const RubiksCube3dArray &r1) const {
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 3; j++) {
@@ -249,6 +261,9 @@ public:
         }
         return true;
     }
+
+
+    // Overloaded assignment operator to copy the state of another RubiksCube3dArray object.
 
     RubiksCube3dArray &operator=(const RubiksCube3dArray &r1) {
         for (int i = 0; i < 6; i++) {
@@ -261,6 +276,8 @@ public:
         return *this;
     }
 };
+
+// Hash3d Function
 
 struct Hash3d{
     size_t operator()(const RubiksCube3dArray &r1) const{
