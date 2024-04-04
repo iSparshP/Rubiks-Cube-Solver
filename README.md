@@ -1,6 +1,6 @@
 # Rubik's Cube Solver
 
-![Rubik's Cube Solver]([rubiks_cube_solver.png](https://github.com/iSparshP/Rubiks-Cube-Solver/assets/77487266/86ad7bae-9fad-4761-9586-af8a2adf3fa9))
+![rubiks](https://github.com/iSparshP/Rubiks-Cube-Solver/assets/77487266/86ad7bae-9fad-4761-9586-af8a2adf3fa9)
 
 Welcome to the Rubik's Cube Solver project! This solver is designed to tackle one of the world's most iconic puzzles, the Rubik's Cube, using Richard Korf's Iterative Deepening A* (IDA*) algorithm. Whether you're a seasoned cube enthusiast or a beginner, this tool will help you conquer the challenge and unravel the mysteries of the cube.
 
